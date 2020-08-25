@@ -19,11 +19,11 @@ class StudentsController extends AppController
     {
         $students = $this->paginate($this->Students);
 
-       // $this->set(compact('students'));
+        $this->set(compact('students'));
 
-        echo json_encode($students);
+      //  echo json_encode($students);
 
-        exit();
+      //  exit();
     }
 
     /**
@@ -39,11 +39,9 @@ class StudentsController extends AppController
             'contain' => [],
         ]);
 
-      //  $this->set(compact('student'));
+        $this->set(compact('student'));
 
-      echo json_encode($student);
-
-        exit();
+      
     }
 
     /**
