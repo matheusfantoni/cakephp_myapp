@@ -20,11 +20,11 @@ class BlogsController extends AppController{
         $this->loadModel('Articles');
         
         $articles = $this->Articles->find('all')
-                                    ->order(['Articles.id DESC'])
-                                    ->limit(3);
+                                    ->order(['Articles.id DESC']);
+        
                                                         
 
-        $this->set('articles', $articles);
+        $this->set('articles', $this->paginate ($articles, ['limit' => '3']));
 
     }
 
