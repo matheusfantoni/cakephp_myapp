@@ -12,6 +12,32 @@ use App\Controller\Admin\AppController;
  */
 class UsersController extends AppController
 {
+    
+    public function login(){
+        
+        if($this->request->is('post')){
+            $user = $this->Auth->identify();
+           
+            if($user){
+                $this->Auth->setUser($user);
+                return $this->redirect(['controller' => 'Users', 'action' => 'index']);
+            
+            }else{
+                
+                $this->Flash->error("Incorrect username or password!");
+
+            }
+        }
+
+    }
+
+
+    public function logout(){
+
+        return $this->redirect($this->Auth->logout());
+
+    }
+    
     /**
      * Index method
      *
