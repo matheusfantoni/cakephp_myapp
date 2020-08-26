@@ -17,7 +17,14 @@ class BlogsController extends AppController{
 
     public function home(){
         
-        //
+        $this->loadModel('Articles');
+        
+        $articles = $this->Articles->find('all')
+                                    ->order(['Articles.id DESC'])
+                                    ->limit(3);
+                                                        
+
+        $this->set('articles', $articles);
 
     }
 
