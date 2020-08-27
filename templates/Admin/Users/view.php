@@ -38,14 +38,8 @@
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($user->id) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Amount') ?></th>
-                    <td><?= $this->Number->format($user->amount) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Status') ?></th>
-                    <td><?= $this->Number->format($user->status) ?></td>
-                </tr>
+                
+                
                 <tr>
                     <th><?= __('Created') ?></th>
                     <td><?= h($user->created) ?></td>

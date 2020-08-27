@@ -80,11 +80,6 @@ class UsersTable extends Table
             ->notEmptyString('email');
 
         $validator
-            ->integer('amount')
-            ->requirePresence('amount', 'create')
-            ->notEmptyString('amount');
-
-        $validator
             ->scalar('password')
             ->maxLength('password', 100)
             ->requirePresence('password', 'create')

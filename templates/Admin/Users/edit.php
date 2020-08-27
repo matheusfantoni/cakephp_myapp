@@ -24,10 +24,9 @@
                 <?php
                     echo $this->Form->control('username');
                     echo $this->Form->control('email');
-                    echo $this->Form->control('amount');
                     echo $this->Form->control('password');
                     echo $this->Form->control('image');
-                    echo $this->Form->control('status');
+                    
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
