@@ -22,6 +22,8 @@
                     echo $this->Form->control('password');
                     echo $this->Form->control('profile.mobile');
                     echo $this->Form->control('image_file',['type'=>'file']);
+                    echo $this->Form->control('skills.0.name');
+                    echo $this->Form->control('skills.1.name');
 
                     
 

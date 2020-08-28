@@ -50,6 +50,8 @@ class UsersTable extends Table
 
         $this->hasOne('Profiles');
 
+        $this->hasMany('Skills');
+
         $this->hasMany('Profiles', [
             'foreignKey' => 'user_id',
         ]);

@@ -24,6 +24,7 @@
                 <?php
                     echo $this->Form->control('username');
                     echo $this->Form->control('email');
+                    
                     echo $this->Form->control('change_image',['type' => 'file']);
                     
                 ?>
