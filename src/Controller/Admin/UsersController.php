@@ -151,7 +151,24 @@ class UsersController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
+        
+        $imgpath = WWW_ROOT.'img'.DS.$user->image;
+         
+        
         if ($this->Users->delete($user)) {
+
+            if( file_exists($imgpath) ){
+                unlink($imgpath);
+            }
+
+        if($this->Users->deleteAll($users)){
+
+            if( file_exists($imgpath) ){
+                unlink($imgpath);
+            }
+
+        }    
+
             $this->Flash->success(__('The user has been deleted.'));
         } else {
             $this->Flash->error(__('The user could not be deleted. Please, try again.'));
