@@ -159,4 +159,17 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function deleteAll(){
+        
+        $this->request->allowMethod(['post', 'delete']);
+        $ids = $this->request->getData('ids');
+
+        if($this->Users->deleteAll(['Users.id IN' => $ids])){
+            $this->Flash->success(__('The users has been deleted.'));
+        }
+
+        return $this->redirect(['action' => 'index']);
+    }
+
 }

@@ -18,9 +18,14 @@
    
    
     <div class="table-responsive">
+        <?= $this->Form->create(null, ['url' => ['action' => 'deleteAll']]) ?>
+        <button>Delete All</button> 
+
         <table>
             <thead>
                 <tr>
+
+                    <td>#</td>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('username') ?></th>
                     <th><?= $this->Paginator->sort('email') ?></th>
@@ -33,6 +38,9 @@
             <tbody>
                 <?php foreach ($users as $user): ?>
                 <tr>
+
+                    <td><?= $this->Form->checkbox('ids[]', ['value' => $user->id]) ?></td>
+
                     <td><?= $this->Number->format($user->id) ?></td>
                     <td><?= h($user->username) ?></td>
                     <td><?= h($user->email) ?></td>
@@ -48,6 +56,8 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+    
+    <?= $this->Form->end() ?>
     </div>
     <div class="paginator">
         <ul class="pagination">
