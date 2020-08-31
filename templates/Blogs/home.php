@@ -2,7 +2,8 @@
 
 $this->Breadcrumbs->add(
     'Home',
-    ['controller' => 'Blogs', 'action' => 'home']
+    ['controller' => 'Blogs', 'action' => 'home'],
+    ['class' => 'breadcrumb-item active']
     
  
 );
