@@ -1,4 +1,13 @@
+<?php 
 
+$this->Breadcrumbs->add(
+    'Home',
+    ['controller' => 'Blogs', 'action' => 'home']
+    
+ 
+);
+
+?>
     
     <div class="container">
 
