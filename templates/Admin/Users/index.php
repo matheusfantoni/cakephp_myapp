@@ -31,8 +31,8 @@
                     <th><?= $this->Paginator->sort('email') ?></th>
                     <th><?= $this->Paginator->sort('image') ?></th>
                     <th> Mobile </th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
+                    <th> Skills </th>
+                    
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -47,8 +47,16 @@
                     <td><?= h($user->email) ?></td>
                     <td><?= @$this->Html->image($user->image, ['style' => 'max-width:50px;height:50px;border-radius:50%;']) ?></td>
                     <td><?= @h($user->profile->mobile) ?></td>
-                    <td><?= h($user->created) ?></td>
-                    <td><?= h($user->modified) ?></td>
+                    
+                    <td> <?php 
+                    
+                    foreach ($user->skills as $key => $skill){
+                        echo $skill -> name." ";
+
+                    }
+
+                    ?> </td>
+
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
